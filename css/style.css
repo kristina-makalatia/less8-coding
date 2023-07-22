@@ -1,0 +1,145 @@
+/* pseudo elements */
+.hello::before {
+    content: 'Good Evening';
+    color:red;
+    background-color: yellow;
+}
+.hello::after {
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: red;
+    display: inline-block;
+    margin-left: 30px;
+}
+.ul-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 250px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+header {
+    background-color: lightblue;
+    padding: 30px;
+}
+.nav-a::after {
+    content: ' ';
+    height: 1px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: red;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+}
+.nav-a {
+    position: relative;
+}
+.nav-a:hover::after {
+    width: 100%;
+}
+
+.image-test {
+    width: 100%;
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+.test::after {
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 60%;
+}
+.test {
+    height: 400px;
+    position: relative;
+}
+
+
+/* pseudo classes */
+.box {
+    width: 250px;
+    height: 150px;
+}
+/* .box:first-child {
+    background-color: red;
+}
+.box:nth-child(2) {
+    background-color: yellow;
+}
+.box:nth-child(3) {
+    background-color: pink;
+}
+.box:last-child {
+    background-color: blue;
+} */
+.wraper-boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* justify-content: space-between; */
+    column-gap: 50px;
+}
+
+.box:nth-child(even) {
+    background-color: red;
+}
+.box:nth-child(odd) {
+    background-color: yellow;
+}
+.box:nth-child(3) .hello1 {
+    color: blue;
+}
+.li-item:not(.active) {
+    display: none;
+}
+
+
+/* icons */
+.fa-github {
+    font-size: 35px;
+    color: red;
+}
+.insta {
+    font-size: 35px;
+    color: blueviolet;
+}
+.fa-github:hover {
+    color: #000;
+}
+.insta:hover {
+    color: red;
+}
+
+
+/* responsive */
+@media (max-width: 1024px) {
+    .wraper-boxes {
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .wraper-boxes {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 480px) {
+    .box:last-child {
+        display: none;
+    }
+}
